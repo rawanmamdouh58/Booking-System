@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("photo-1489599849927-2ee91cede3ba.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 25px;
+}
+.sign {
+  padding-top: 10px;
+  height: 420px;
+  background-color: rgba(5, 5, 5, 0.63);
+  border-radius: 15px;
+}
+
+.pg1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+h1 {
+  color: white;
+}
+.pg1 input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(5, 5, 5, 0.836);
+  color: rgb(247, 243, 243);
+}
+.step4 {
+  color: white;
+  text-align: center;
+  height: 79px;
+}
+.form {
+  display: none;
+  margin: 50px auto;
+  width: 80%;
+}
+.form.active {
+  display: block;
+}
+p {
+  margin: auto;
+  align-items: center;
+}
+.form .pg1 input:invalid {
+  border: 1px solid red;
+}

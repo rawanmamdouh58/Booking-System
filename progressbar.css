@@ -1,0 +1,64 @@
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 35px 20px;
+  max-width: 100%;
+  width: 350px;
+}
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 100%;
+  background-color: rgba(185, 16, 16, 0.315);
+  z-index: -1;
+}
+.progress {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 0%;
+  background-color: red;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+.circle {
+  border: 3px solid rgba(185, 16, 16, 0.315);
+  border-radius: 50%;
+  background-color: white;
+  color: #999;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4 ease;
+}
+.circle.active {
+  border-color: red;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: brown;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px 0 0 0;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus {
+  outline: none;
+}
+.btn:disabled {
+  background-color: rgba(185, 16, 16, 0.315);
+  cursor: not-allowed;
+}

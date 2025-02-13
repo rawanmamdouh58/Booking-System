@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="progressbar.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sign">
+        <h1 class="title">Sign Up</h1>
+        <div class="progress-container">
+          <div class="progress" id="progress"></div>
+          <div class="circle active">1</div>
+          <div class="circle">2</div>
+          <div class="circle">3</div>
+          <div class="circle">4</div>
+        </div>
+        <div class="form step1 active">
+          <form action="#">
+            <div class="pg1">
+              <input type="text" placeholder="First Name" id="fname" />
+              <input type="text" id="sname" placeholder="Last Name" />
+           
+            </div>
+          </form>
+         
+        
+      </div>
+      <div class="form step2">
+        <form action="#">
+          <div class="pg1">
+            <input type="email" placeholder="E-mail" id="email" />
+            <input type="text" id="phone" placeholder="Phone Number" />
+          </div>
+        </form>
+      </div>
+      <div class="form step3">
+        <form action="#">
+          <div class="pg1">
+            <input type="password" placeholder="Password" id="pass1
+            " />
+            <input type="password" id="pass2" placeholder="Confirm Password" />
+          </div>
+        </form>
+      </div>
+      <div class="form step4">
+        <p>Registeration Done</p>
+      </div>
+      <div class="button-container">
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
+      </div>
+    </div>
+  </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
