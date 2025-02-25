@@ -44,6 +44,7 @@
   border-color: red;
 }
 .btn {
+  width: 80px;
   cursor: pointer;
   border: none;
   color: white;

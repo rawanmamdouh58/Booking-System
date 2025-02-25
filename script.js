@@ -3,6 +3,12 @@ const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const circles = document.querySelectorAll(".circle");
 const forms = document.querySelectorAll(".form");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
+const email = document.getElementById("email");
+const password1 = document.getElementById("pass1");
+const password2 = document.getElementById("pass2");
+const phone = document.getElementById("phone");
 
 let currentStep = 1;
 
@@ -10,11 +16,15 @@ next.addEventListener("click", function () {
   if (currentStep < circles.length && validateForm(currentStep - 1)) {
     currentStep++;
     update();
+  } else if (currentStep === circles.length) {
+    save();
   }
 });
 
 prev.addEventListener("click", function () {
   if (currentStep > 1) {
+    validateForm(currentStep - 1);
+
     currentStep--;
     update();
   }
@@ -77,5 +87,82 @@ function validateForm(stepIndex) {
     }
   });
 
+  if (password1 && password2) {
+    if (password1.value !== password2.value) {
+      isValid = false;
+      const confirmPasswordErrorMessage = password2.nextElementSibling;
+
+      if (
+        !confirmPasswordErrorMessage ||
+        !confirmPasswordErrorMessage.classList.contains("error-message")
+      ) {
+        const errorElement = document.createElement("p");
+        errorElement.className = "error-message";
+        errorElement.textContent = "Passwords do not match";
+        errorElement.style.color = "red";
+        errorElement.style.fontSize = "0.875rem";
+        password2.insertAdjacentElement("afterend", errorElement);
+        password1.value = "";
+        password2.value = "";
+      }
+
+      password2.classList.add("invalid");
+    } else {
+      const confirmPasswordErrorMessage = password2.nextElementSibling;
+
+      if (
+        confirmPasswordErrorMessage &&
+        confirmPasswordErrorMessage.classList.contains("error-message")
+      ) {
+        confirmPasswordErrorMessage.remove();
+      }
+
+      password2.classList.remove("invalid");
+    }
+  }
+
   return isValid;
+}
+
+// Local Storage
+
+let dataProd = [];
+
+if (localStorage.accounts != null) {
+  dataProd = JSON.parse(localStorage.getItem("accounts"));
+}
+
+function save() {
+  let newAccount = {
+    firstname: fname.value.trim().toLowerCase(),
+    lastname: lname.value.trim().toLowerCase(),
+    email: email.value.trim().toLowerCase(),
+    password1: password1.value,
+    password2: password2.value,
+    phone: phone.value.trim(),
+  };
+
+  const emailExists = dataProd.some(
+    (account) => account.email === newAccount.email
+  );
+  if (emailExists) {
+    alert("Email already registered!");
+    return;
+  }
+
+  dataProd.push(newAccount);
+  localStorage.setItem("accounts", JSON.stringify(dataProd));
+
+  clearData();
+
+  alert("Account created successfully!");
+}
+
+function clearData() {
+  fname.value = "";
+  lname.value = "";
+  phone.value = "";
+  email.value = "";
+  password1.value = "";
+  password2.value = "";
 }
