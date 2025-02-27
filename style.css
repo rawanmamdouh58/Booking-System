@@ -3,7 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("photo-1489599849927-2ee91cede3ba.jpg");
+  background-image: url("./assets/photo-1489599849927-2ee91cede3ba.jpg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -60,4 +60,25 @@ p {
 }
 .form .pg1 input:invalid {
   border: 1px solid red;
+}
+.passdiv {
+  position: relative;
+}
+
+.password-toggle-icon,
+.password-toggle-icon2 {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.password-toggle-icon {
+  top: 25%;
+}
+
+.password-toggle-icon2 {
+  top: 80%;
 }

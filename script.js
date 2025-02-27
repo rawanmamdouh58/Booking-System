@@ -166,3 +166,28 @@ function clearData() {
   password1.value = "";
   password2.value = "";
 }
+// toggle function
+function toggle1() {
+  let eye1 = document.getElementById("eye1");
+  if (password1.type === "password") {
+    password1.type = "text";
+    eye1.innerHTML =
+      '<i class="far fa-eye-slash" style="color: rgb(80, 75, 75);;" ></i>';
+  } else {
+    password1.type = "password";
+    eye1.innerHTML =
+      '<i class="far fa-eye" style="color: rgb(80, 75, 75);;" ></i>';
+  }
+}
+function toggle2() {
+  let eye2 = document.getElementById("eye2");
+  if (password2.type === "password") {
+    password2.type = "text";
+    eye2.innerHTML =
+      '<i class="far fa-eye-slash" style="color: rgb(80, 75, 75);" ></i>';
+  } else {
+    password2.type = "password";
+    eye2.innerHTML =
+      '<i class="far fa-eye" style="color: rgb(80, 75, 75);" ></i>';
+  }
+}

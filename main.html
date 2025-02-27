@@ -6,6 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="progressbar.css" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
@@ -23,39 +30,62 @@
             <div class="pg1">
               <input type="text" placeholder="First Name" id="fname" />
               <input type="text" id="lname" placeholder="Last Name" />
-           
             </div>
           </form>
-         
-        
+        </div>
+        <div class="form step2">
+          <form action="#">
+            <div class="pg1">
+              <input
+                type="email"
+                placeholder="E-mail"
+                id="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              />
+
+              <input type="text" id="phone" placeholder="Phone Number" />
+            </div>
+          </form>
+        </div>
+        <div class="form step3">
+          <form action="#">
+            <div class="pg1 passdiv">
+              <input type="password" placeholder="Password" id="pass1" />
+              <span class="password-toggle-icon" onclick="toggle1()" id="eye1"
+                ><i class="far fa-eye" style="color: rgb(80, 75, 75)"></i
+              ></span>
+
+              <input
+                type="password"
+                id="pass2"
+                placeholder="Confirm Password"
+              />
+              <span class="password-toggle-icon2" id="eye2" onclick="toggle2()"
+                ><i class="far fa-eye" style="color: rgb(80, 75, 75)"></i
+              ></span>
+            </div>
+          </form>
+        </div>
+        <div class="form step4">
+          <p>Registeration Done</p>
+        </div>
+
+        <div class="button-container">
+          <button class="btn" id="prev" disabled>Previous</button>
+          <button class="btn" id="next">Next</button>
+        </div>
       </div>
-      <div class="form step2">
+      <!-- <div class="form step3">
         <form action="#">
           <div class="pg1">
-            <input type="email" placeholder="E-mail" id="email" />
-            <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
-            <input type="text" id="phone" placeholder="Phone Number" />
+            <input type="email" placeholder="Your E-mail" id="logemail"/>
+            <input type="password" placeholder="Password" id="pass" />
+          
           </div>
         </form>
-      </div>
-      <div class="form step3">
-        <form action="#">
-          <div class="pg1">
-            <input type="password" placeholder="Password" id="pass1" />
-            <input type="password" id="pass2" placeholder="Confirm Password" />
-          </div>
-        </form>
-      </div>
-      <div class="form step4">
-        <p>Registeration Done</p>
-      </div>
-      <div class="button-container">
-        <button class="btn" id="prev" disabled>Previous</button>
-        <button class="btn" id="next">Next</button>
-      </div>
+      </div> -->
     </div>
-  </div>
-    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
